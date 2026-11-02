@@ -1,0 +1,358 @@
+[/workspaces/default/code/src/pages/GuestSite.tsx#db56]
+340:        <div className="absolute inset-0 opacity-5">
+341:          {[...Array(20)].map((_, i) => (
+342:            <div key={i} style={{ position: 'absolute', left: `${(i * 13 + 7) % 100}%`, top: `${(i * 19 + 5) % 100}%`, fontSize: '2rem', opacity: 0.5 }}>✦</div>
+343:          ))}
+344:        </div>
+345:        <div className="max-w-4xl mx-auto relative z-10 text-center">
+346:          <div className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: '#b8965a' }}>Counting Down</div>
+347:          <h2 className="text-4xl mb-12" style={{ fontFamily: 'Playfair Display, serif', color: '#f5ecd8' }}>Until We Say "I Do"</h2>
+348:          <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
+349:            {[
+350:              { label: 'Days', value: countdown.days },
+351:              { label: 'Hours', value: countdown.hours },
+352:              { label: 'Minutes', value: countdown.minutes },
+353:              { label: 'Seconds', value: countdown.seconds },
+354:            ].map(({ label, value }) => (
+355:              <div key={label} className="glass-card rounded-2xl py-8 px-4">
+356:                <div className="text-4xl md:text-5xl font-bold gold-text" style={{ fontFamily: 'Playfair Display, serif' }}>
+357:                  {String(value).padStart(2, '0')}
+358:                </div>
+359:                <div className="text-xs tracking-widest uppercase mt-2" style={{ color: 'rgba(184,150,90,0.7)' }}>{label}</div>
+360:              </div>
+361:            ))}
+362:          </div>
+363:        </div>
+364:      </section>
+365:
+366:      {/* Event Details */}
+367:      <section className="py-24 px-6" style={{ background: '#faf8f5' }}>
+368:        <div className="max-w-4xl mx-auto">
+369:          <div className="text-center mb-16">
+370:            <div className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: '#b8965a' }}>Save the Date</div>
+371:            <h2 className="text-4xl md:text-5xl" style={{ fontFamily: 'Playfair Display, serif', color: '#2c2118' }}>Wedding Events</h2>
+372:          </div>
+373:
+374:          <div className="grid md:grid-cols-2 gap-6 mb-10">
+375:            {[
+376:              { title: 'Akad Nikah', icon: '◆', date: 'Saturday, 15 November 2026', time: '09:00 – 11:00 WIB', venue: 'Masjid Agung Sunda Kelapa', address: 'Jl. Taman Sunda Kelapa, Jakarta Pusat' },
+377:              { title: 'Holy Reception', icon: '◇', date: 'Saturday, 15 November 2026', time: '12:00 – 17:00 WIB', venue: 'The Grand Ballroom', address: 'Hotel Indonesia Kempinski, Jakarta' },
+378:            ].map((event) => (
+379:              <div key={event.title} className="p-8 hover-lift rounded-2xl" style={{ background: '#fff', border: '1px solid var(--border)' }}>
+380:                <div className="text-2xl mb-4" style={{ color: '#b8965a' }}>{event.icon}</div>
+381:                <h3 className="text-2xl mb-4" style={{ fontFamily: 'Playfair Display, serif', color: '#2c2118' }}>{event.title}</h3>
+382:                <div className="space-y-2 text-sm" style={{ color: '#5a4a35' }}>
+383:                  <div>📅 {event.date}</div>
+384:                  <div>🕐 {event.time}</div>
+385:                  <div className="font-medium mt-4" style={{ color: '#2c2118' }}>{event.venue}</div>
+386:                  <div style={{ color: '#8a7a65' }}>{event.address}</div>
+387:                </div>
+388:              </div>
+389:            ))}
+390:          </div>
+391:
+392:          <div className="flex flex-wrap items-center justify-between gap-4 p-6 rounded-2xl" style={{ background: '#f0ebe3', border: '1px solid var(--border)' }}>
+393:            <div>
+394:              <div className="text-xs tracking-widest uppercase mb-1" style={{ color: '#b8965a' }}>Dress Code</div>
+395:              <p className="font-medium" style={{ color: '#2c2118' }}>Formal — Ivory, Champagne, or Sage Green</p>
+396:            </div>
+397:            <button
+398:              onClick={() => window.open('https://calendar.google.com', '_blank')}
+399:              className="px-6 py-3 text-sm tracking-wide transition-all hover:opacity-90"
+400:              style={{ background: 'linear-gradient(135deg, #b8965a, #d4aa6a)', color: '#fff', borderRadius: '8px' }}
+401:            >
+402:              + Add to Calendar
+403:            </button>
+404:          </div>
+405:        </div>
+406:      </section>
+407:
+408:      {/* Location */}
+409:      <section className="py-24 px-6" style={{ background: '#f0ebe3' }}>
+410:        <div className="max-w-4xl mx-auto">
+411:          <div className="text-center mb-16">
+412:            <div className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: '#b8965a' }}>Find Us</div>
+413:            <h2 className="text-4xl md:text-5xl" style={{ fontFamily: 'Playfair Display, serif', color: '#2c2118' }}>Venue & Location</h2>
+414:          </div>
+415:          <div className="grid md:grid-cols-2 gap-8">
+416:            <div className="relative overflow-hidden rounded-2xl" style={{ height: '320px' }}>
+417:              <img src={UNSPLASH.venue} alt="Venue" className="w-full h-full object-cover" />
+418:              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(44,33,24,0.6) 0%, transparent 50%)' }} />
+419:              <div className="absolute bottom-4 left-4 text-white">
+420:                <div className="font-semibold">The Grand Ballroom</div>
+421:                <div className="text-sm opacity-80">Hotel Indonesia Kempinski</div>
+422:              </div>
+423:            </div>
+424:            <div className="flex flex-col justify-between">
+425:              <div>
+426:                <h3 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Playfair Display, serif', color: '#2c2118' }}>The Grand Ballroom</h3>
+427:                <p className="text-sm mb-2" style={{ color: '#5a4a35' }}>Hotel Indonesia Kempinski</p>
+428:                <p className="text-sm mb-6" style={{ color: '#8a7a65' }}>Jl. M.H. Thamrin No.1, Jakarta Pusat, DKI Jakarta 10310</p>
+429:                <div className="w-full rounded-2xl overflow-hidden mb-6" style={{ height: '180px', background: '#e0d8cc' }}>
+430:                  <iframe
+431:                    title="map"
+432:                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322352!2d106.82337381476908!3d-6.195037862426226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f432b4f20059%3A0x92b2c52f96ce2e34!2sHotel%20Indonesia%20Kempinski%20Jakarta!5e0!3m2!1sen!2sid!4v1234567890"
+433:                    width="100%"
+434:                    height="180"
+435:                    style={{ border: 0 }}
+436:                    loading="lazy"
+437:                  />
+438:                </div>
+439:              </div>
+440:              <button
+441:                onClick={() => window.open('https://maps.google.com', '_blank')}
+442:                className="w-full py-3 text-sm tracking-wide font-medium transition-all hover:opacity-90"
+443:                style={{ background: 'linear-gradient(135deg, #b8965a, #d4aa6a)', color: '#fff', borderRadius: '8px' }}
+444:              >
+445:                Open Navigation
+446:              </button>
+447:            </div>
+448:          </div>
+449:        </div>
+450:      </section>
+451:
+452:      {/* Love Story Timeline */}
+453:      <section className="py-24 px-6" style={{ background: '#faf8f5' }}>
+454:        <div className="max-w-2xl mx-auto">
+455:          <div className="text-center mb-16">
+456:            <div className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: '#b8965a' }}>Our Journey</div>
+457:            <h2 className="text-4xl md:text-5xl" style={{ fontFamily: 'Playfair Display, serif', color: '#2c2118' }}>Love Story</h2>
+458:          </div>
+459:          <div className="relative">
+460:            <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2" style={{ background: 'linear-gradient(to bottom, transparent, #b8965a, transparent)' }} />
+461:            {timelineEvents.map((event, i) => (
+462:              <div key={event.year} className={`flex items-center mb-12 gap-8 ${i % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+463:                <div className={`w-1/2 ${i % 2 === 0 ? 'text-right' : 'text-left'}`}>
+464:                  <div className="text-2xl font-bold gold-text" style={{ fontFamily: 'Playfair Display, serif' }}>{event.year}</div>
+465:                  <h3 className="text-lg font-semibold mb-1" style={{ fontFamily: 'Playfair Display, serif', color: '#2c2118' }}>{event.title}</h3>
+466:                  <p className="text-sm" style={{ color: '#8a7a65' }}>{event.desc}</p>
+467:                </div>
+468:                <div className="relative z-10 w-4 h-4 rounded-full flex-shrink-0" style={{ background: 'linear-gradient(135deg, #b8965a, #d4aa6a)', boxShadow: '0 0 0 4px rgba(184,150,90,0.2)' }} />
+469:                <div className="w-1/2" />
+470:              </div>
+471:            ))}
+472:          </div>
+473:        </div>
+474:      </section>
+475:
+476:      {/* Gallery */}
+477:      <section className="py-24 px-6" style={{ background: '#f0ebe3' }}>
+478:        <div className="max-w-5xl mx-auto">
+479:          <div className="text-center mb-16">
+480:            <div className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: '#b8965a' }}>Pre-Wedding</div>
+481:            <h2 className="text-4xl md:text-5xl" style={{ fontFamily: 'Playfair Display, serif', color: '#2c2118' }}>Gallery</h2>
+482:          </div>
+483:          <div className="columns-2 md:columns-3 gap-4 space-y-4">
+484:            {[UNSPLASH.gallery1, UNSPLASH.gallery2, UNSPLASH.gallery3, UNSPLASH.gallery4, UNSPLASH.gallery5, UNSPLASH.hero].map((src, i) => (
+485:              <div key={i} className="break-inside-avoid overflow-hidden rounded-xl cursor-pointer hover-lift" onClick={() => setLightboxImg(src)}>
+486:                <img src={src} alt={`Gallery ${i + 1}`} className="w-full object-cover transition-transform duration-500 hover:scale-105" />
+487:              </div>
+488:            ))}
+489:          </div>
+490:          <div className="text-center mt-10">
+491:            <button className="px-8 py-3 text-sm tracking-wide border transition-all hover:opacity-80" style={{ borderColor: '#b8965a', color: '#b8965a', borderRadius: '8px' }}>
+492:              Share Your Moment ↗
+493:            </button>
+494:          </div>
+495:        </div>
+496:      </section>
+497:
+498:      {/* RSVP */}
+499:      <section className="py-24 px-6" style={{ background: '#faf8f5' }}>
+500:        <div className="max-w-xl mx-auto">
+501:          <div className="text-center mb-12">
+502:            <div className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: '#b8965a' }}>Kindly Reply</div>
+503:            <h2 className="text-4xl md:text-5xl" style={{ fontFamily: 'Playfair Display, serif', color: '#2c2118' }}>RSVP</h2>
+504:          </div>
+505:
+506:          {rsvpSubmitted ? (
+507:            <div className="text-center py-16">
+508:              <div className="text-5xl mb-4" style={{ color: '#b8965a' }}>✦</div>
+509:              <h3 className="text-2xl mb-2" style={{ fontFamily: 'Playfair Display, serif', color: '#2c2118' }}>Thank You!</h3>
+510:              <p style={{ color: '#8a7a65' }}>Your response has been recorded. We look forward to celebrating with you.</p>
+511:            </div>
+512:          ) : (
+513:            <form
+514:              className="space-y-5 p-8 rounded-2xl"
+515:              style={{ background: '#fff', border: '1px solid var(--border)' }}
+516:              onSubmit={(e) => { e.preventDefault(); setRsvpSubmitted(true); }}
+517:            >
+518:              <div>
+519:                <label className="block text-xs tracking-widest uppercase mb-2" style={{ color: '#8a7a65' }}>Your Name</label>
+520:                <input type="text" required className="w-full px-4 py-3 text-sm outline-none transition-all" style={{ background: '#faf8f5', border: '1px solid var(--border)', borderRadius: '8px', color: '#2c2118', fontFamily: 'Outfit, sans-serif' }} placeholder="Enter your full name" />
+521:              </div>
+522:              <div>
+523:                <label className="block text-xs tracking-widest uppercase mb-2" style={{ color: '#8a7a65' }}>Attendance</label>
+524:                <div className="flex gap-3">
+525:                  {['yes', 'no'].map((val) => (
+526:                    <button
+527:                      key={val}
+528:                      type="button"
+529:                      onClick={() => setRsvpStatus(val as 'yes' | 'no')}
+530:                      className="flex-1 py-3 text-sm tracking-wide transition-all"
+531:                      style={{
+532:                        borderRadius: '8px',
+533:                        border: rsvpStatus === val ? '2px solid #b8965a' : '1px solid var(--border)',
+534:                        background: rsvpStatus === val ? 'linear-gradient(135deg, #b8965a, #d4aa6a)' : '#fff',
+535:                        color: rsvpStatus === val ? '#fff' : '#5a4a35',
+536:                      }}
+537:                    >
+538:                      {val === 'yes' ? '✓ Yes, I will attend' : '✗ Sorry, cannot attend'}
+539:                    </button>
+540:                  ))}
+541:                </div>
+542:              </div>
+543:              <div>
+544:                <label className="block text-xs tracking-widest uppercase mb-2" style={{ color: '#8a7a65' }}>Number of Guests</label>
+545:                <select className="w-full px-4 py-3 text-sm outline-none" style={{ background: '#faf8f5', border: '1px solid var(--border)', borderRadius: '8px', color: '#2c2118' }}>
+546:                  {[1, 2, 3, 4].map(n => <option key={n} value={n}>{n} person{n > 1 ? 's' : ''}</option>)}
+547:                </select>
+548:              </div>
+549:              <div>
+550:                <label className="block text-xs tracking-widest uppercase mb-2" style={{ color: '#8a7a65' }}>Message (optional)</label>
+551:                <textarea rows={3} className="w-full px-4 py-3 text-sm outline-none resize-none" style={{ background: '#faf8f5', border: '1px solid var(--border)', borderRadius: '8px', color: '#2c2118', fontFamily: 'Outfit, sans-serif' }} placeholder="Share a kind message..." />
+552:              </div>
+553:              <button type="submit" className="w-full py-4 text-sm tracking-widest uppercase font-medium transition-all hover:opacity-90" style={{ background: 'linear-gradient(135deg, #b8965a, #d4aa6a)', color: '#fff', borderRadius: '8px' }}>
+554:                Send RSVP
+555:              </button>
+556:            </form>
+557:          )}
+558:        </div>
+559:      </section>
+560:
+561:      {/* Wishes */}
+562:      <section className="py-24 px-6" style={{ background: '#f0ebe3' }}>
+563:        <div className="max-w-3xl mx-auto">
+564:          <div className="text-center mb-12">
+565:            <div className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: '#b8965a' }}>Words of Love</div>
+566:            <h2 className="text-4xl md:text-5xl" style={{ fontFamily: 'Playfair Display, serif', color: '#2c2118' }}>Guest Wishes</h2>
+567:          </div>
+568:
+569:          <div className="grid md:grid-cols-2 gap-4 mb-10">
+570:            {wishes.map((wish, i) => (
+571:              <div key={i} className="p-6 rounded-2xl hover-lift" style={{ background: '#fff', border: '1px solid var(--border)' }}>
+572:                <p className="text-sm leading-relaxed mb-4 italic" style={{ color: '#5a4a35', fontFamily: 'Playfair Display, serif' }}>"{wish.msg}"</p>
+573:                <div className="flex items-center justify-between">
+574:                  <div className="font-medium text-sm" style={{ color: '#2c2118' }}>{wish.name}</div>
+575:                  <button
+576:                    onClick={() => setLikedWishes(prev => prev.includes(i) ? prev.filter(x => x !== i) : [...prev, i])}
+577:                    className="flex items-center gap-1 text-xs transition-all hover:scale-110"
+578:                    style={{ color: likedWishes.includes(i) ? '#b8965a' : '#8a7a65' }}
+579:                  >
+580:                    ♥ {wish.hearts + (likedWishes.includes(i) ? 1 : 0)}
+581:                  </button>
+582:                </div>
+583:              </div>
+584:            ))}
+585:          </div>
+586:
+587:          {wishSubmitted ? (
+588:            <div className="text-center py-8">
+589:              <div className="text-3xl mb-2" style={{ color: '#b8965a' }}>✦</div>
+590:              <p style={{ color: '#8a7a65' }}>Your wish has been added. Thank you!</p>
+591:            </div>
+592:          ) : (
+593:            <form
+594:              className="p-6 rounded-2xl space-y-4"
+595:              style={{ background: '#fff', border: '1px solid var(--border)' }}
+596:              onSubmit={(e) => { e.preventDefault(); setWishSubmitted(true); }}
+597:            >
+598:              <input type="text" required value={wishName} onChange={e => setWishName(e.target.value)} className="w-full px-4 py-3 text-sm outline-none" style={{ background: '#faf8f5', border: '1px solid var(--border)', borderRadius: '8px', color: '#2c2118', fontFamily: 'Outfit, sans-serif' }} placeholder="Your name" />
+599:              <textarea required rows={3} value={wishMsg} onChange={e => setWishMsg(e.target.value)} className="w-full px-4 py-3 text-sm outline-none resize-none" style={{ background: '#faf8f5', border: '1px solid var(--border)', borderRadius: '8px', color: '#2c2118', fontFamily: 'Outfit, sans-serif' }} placeholder="Write your wish here..." />
+600:              <button type="submit" className="w-full py-3 text-sm tracking-wide transition-all hover:opacity-90" style={{ background: 'linear-gradient(135deg, #b8965a, #d4aa6a)', color: '#fff', borderRadius: '8px' }}>
+601:                Send Wish ♥
+602:              </button>
+603:            </form>
+604:          )}
+605:        </div>
+606:      </section>
+607:
+608:      {/* Digital Gift */}
+609:      <section className="py-24 px-6" style={{ background: '#faf8f5' }}>
+610:        <div className="max-w-3xl mx-auto">
+611:          <div className="text-center mb-12">
+612:            <div className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: '#b8965a' }}>Wedding Gift</div>
+613:            <h2 className="text-4xl md:text-5xl" style={{ fontFamily: 'Playfair Display, serif', color: '#2c2118' }}>Send a Gift</h2>
+614:            <p className="text-sm mt-3" style={{ color: '#8a7a65' }}>Your presence is the greatest gift. But if you wish to give more…</p>
+615:          </div>
+616:          <div className="grid md:grid-cols-3 gap-4">
+617:            {[
+618:              { bank: 'BCA', account: '1234567890', name: 'Reza Firmansyah' },
+619:              { bank: 'Mandiri', account: '0987654321', name: 'Amira Putri' },
+620:              { bank: 'QRIS', account: 'QR Code', name: 'Scan to Pay' },
+621:            ].map((gift) => (
+622:              <div key={gift.bank} className="p-6 rounded-2xl text-center hover-lift" style={{ background: '#fff', border: '1px solid var(--border)' }}>
+623:                <div className="text-2xl font-bold mb-1 gold-text" style={{ fontFamily: 'Playfair Display, serif' }}>{gift.bank}</div>
+624:                <div className="text-xs mb-1" style={{ color: '#8a7a65' }}>{gift.name}</div>
+625:                <div className="text-sm font-mono mb-4" style={{ color: '#2c2118', background: '#faf8f5', padding: '8px', borderRadius: '6px' }}>{gift.account}</div>
+626:                <button
+627:                  onClick={() => handleCopy(gift.account, gift.bank)}
+628:                  className="w-full py-2 text-xs tracking-wide transition-all hover:opacity-80"
+629:                  style={{ border: '1px solid #b8965a', borderRadius: '6px', background: copiedBank === gift.bank ? '#b8965a' : 'transparent', color: copiedBank === gift.bank ? '#fff' : '#b8965a' }}
+630:                >
+631:                  {copiedBank === gift.bank ? 'Copied!' : 'Copy Number'}
+632:                </button>
+633:              </div>
+634:            ))}
+635:          </div>
+636:        </div>
+637:      </section>
+638:
+639:      {/* FAQ */}
+640:      <section className="py-24 px-6" style={{ background: '#f0ebe3' }}>
+641:        <div className="max-w-2xl mx-auto">
+642:          <div className="text-center mb-12">
+643:            <div className="text-xs tracking-[0.4em] uppercase mb-3" style={{ color: '#b8965a' }}>Questions & Answers</div>
+644:            <h2 className="text-4xl md:text-5xl" style={{ fontFamily: 'Playfair Display, serif', color: '#2c2118' }}>FAQ</h2>
+645:          </div>
+646:          <div className="space-y-3">
+647:            {faqItems.map((faq, i) => (
+648:              <div key={i} className="rounded-xl overflow-hidden" style={{ background: '#fff', border: '1px solid var(--border)' }}>
+649:                <button
+650:                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+651:                  className="w-full flex justify-between items-center p-5 text-left transition-all"
+652:                  style={{ color: '#2c2118' }}
+653:                >
+654:                  <span className="font-medium text-sm" style={{ fontFamily: 'Playfair Display, serif' }}>{faq.q}</span>
+655:                  <span className="text-lg transition-transform duration-300" style={{ color: '#b8965a', transform: openFaq === i ? 'rotate(45deg)' : 'none' }}>+</span>
+656:                </button>
+657:                {openFaq === i && (
+658:                  <div className="px-5 pb-5 text-sm leading-relaxed" style={{ color: '#5a4a35' }}>{faq.a}</div>
+659:                )}
+660:              </div>
+661:            ))}
+662:          </div>
+663:        </div>
+664:      </section>
+665:
+666:      {/* Footer */}
+667:      <section className="py-20 px-6 text-center" style={{ background: 'linear-gradient(135deg, #2c2118, #3d2e1a)' }}>
+668:        <div className="text-xs tracking-[0.4em] uppercase mb-4" style={{ color: '#b8965a' }}>With Love</div>
+669:        <h2 className="text-5xl font-bold mb-4" style={{ fontFamily: 'Playfair Display, serif', color: '#f5ecd8' }}>
+670:          Reza & Amira
+671:        </h2>
+672:        <p className="text-sm mb-8" style={{ color: '#c8a870' }}>15 November 2026 · Jakarta, Indonesia</p>
+673:        <div className="text-xl" style={{ color: '#b8965a' }}>✦ ✦ ✦</div>
+674:        <div className="mt-10 pt-8" style={{ borderTop: '1px solid rgba(184,150,90,0.2)' }}>
+675:          <button onClick={() => navigate('/admin/login')} className="text-xs tracking-widest uppercase transition-all hover:opacity-100" style={{ color: 'rgba(184,150,90,0.3)', background: 'none', border: 'none', cursor: 'pointer' }}>
+676:            Admin Portal
+677:          </button>
+678:        </div>
+679:      </section>
+680:
+681:      {/* Lightbox */}
+682:      {lightboxImg && (
+683:        <div
+684:          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+685:          style={{ background: 'rgba(0,0,0,0.9)' }}
+686:          onClick={() => setLightboxImg(null)}
+687:        >
+688:          <img src={lightboxImg} alt="Fullscreen" className="max-w-full max-h-full object-contain rounded-lg" />
+689:          <button className="absolute top-6 right-6 text-white text-3xl hover:opacity-80" onClick={() => setLightboxImg(null)}>✕</button>
+690:        </div>
+691:      )}
+692:    </div>
+693:  );
+694:}
+
+(End of file — 694 lines.)
