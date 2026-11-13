@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env*
+!.env.example
+wallet/
+Wallet_*/
+.vite/
+*.tsbuildinfo
+*.log
